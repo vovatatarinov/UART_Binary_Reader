@@ -111,12 +111,16 @@ public class Field extends JPanel {
     }
     private boolean isOpened;
     private SerialPort serialPort;
-    public Field(JFrame parent) {
+    private JButton button;
+    private NorthPanel northPanel;
+    private JFrame parent;
+    public Field(JFrame s_parent) {
+        this.parent = s_parent;
         setFocusable(true);
         this.setLayout(new GridLayout(2,1));
-        NorthPanel northPanel = new NorthPanel();
+        northPanel = new NorthPanel();
         this.add(northPanel);
-        JButton button = new JButton("Начать запись.");
+        button = new JButton("Начать запись.");
         isOpened = false;
         button.addActionListener(new ActionListener() {
             @Override
